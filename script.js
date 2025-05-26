@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
 
-  const phrases = ["Frontend Developer", "Wordpress Developer","Software Developer", "Programmer"];
+const phrases = ["Mobile App Developer", "Frontend Developer", "Backend Developer"];
   const el = document.getElementById("typewriter");
 
   let typeTime = 150;
@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Contact Form Configuration
   document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("hNDs4uvKytGGzAZo8"); // Replace with your EmailJS Public Key
+    emailjs.init("ue1EaoOE9tu3WyLa9"); // Replace with your EmailJS Public Key
   
     document.querySelector("form").addEventListener("submit", function (e) {
       e.preventDefault();
@@ -332,9 +332,9 @@ document.addEventListener("DOMContentLoaded", () => {
       };
   
       // Send email
-      emailjs.send("service_22et9wc", "template_4pwjh4f", params)
+      emailjs.send("service_197wjxo", "template_1f9sosn", params)
         .then(function (response) {
-          alert("Awesome! Your message has been sent. I'll reply as soon as I can. 🚀");
+          alert("Awesome! Your message has been sent.🚀");
           document.querySelector("form").reset();
         })
         .catch(function (error) {
