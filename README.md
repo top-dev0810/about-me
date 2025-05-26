@@ -8,9 +8,6 @@ Welcome to my personal portfolio website! This project showcases my skills, expe
 - **About Me Section** – Provides insights into my background, skills, and experience.  
 - **Contact Form & Social Links** – Makes it easy for potential clients or employers to reach out.  
 
-## 🌐 Live Demo  
-🔗 **Check it out here:** [Live Demo](https://eleazartuazon.vercel.app/)  
-
 ## 🛠 Tech Stack  
 - **Front-End:** Next.js (React framework), React.js, Tailwind CSS (for styling), HTML5 & CSS3, JavaScript (ES6+)
 - **Back-End:** Node.js
