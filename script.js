@@ -256,16 +256,22 @@ const phrases = ["Mobile App Developer", "Frontend Developer", "Backend Develope
       opacity: {
         value: 0.5,
         random: false,
+        anim: {
+          enable: false,
+        },
       },
       size: {
         value: 3,
         random: true,
+        anim: {
+          enable: false,
+        },
       },
       line_linked: {
         enable: true,
         distance: 150,
         color: "#3b82f6",
-        opacity: 0.2,
+        opacity: 0.4,
         width: 1,
       },
       move: {
@@ -276,6 +282,11 @@ const phrases = ["Mobile App Developer", "Frontend Developer", "Backend Develope
         straight: false,
         out_mode: "out",
         bounce: false,
+        attract: {
+          enable: true,
+          rotateX: 600,
+          rotateY: 1200,
+        },
       },
     },
     interactivity: {
@@ -295,7 +306,7 @@ const phrases = ["Mobile App Developer", "Frontend Developer", "Backend Develope
         grab: {
           distance: 140,
           line_linked: {
-            opacity: 0.5,
+            opacity: 1,
           },
         },
         push: {
@@ -363,6 +374,48 @@ mobileNavLinks.forEach((link) => {
     hamburger.classList.remove("active");
     menuOverlay.classList.remove("active");
     document.body.style.overflow = "";
+  });
+});
+
+// Mouse Follower Ball with Surrounding Circle
+document.addEventListener("DOMContentLoaded", () => {
+  // Create the outer circle
+  const outerCircle = document.createElement("div");
+  outerCircle.style.width = "30px";
+  outerCircle.style.height = "30px";
+  outerCircle.style.border = "1px solid #3b82f6";
+  outerCircle.style.borderRadius = "50%";
+  outerCircle.style.position = "fixed";
+  outerCircle.style.pointerEvents = "none";
+  outerCircle.style.zIndex = "9998";
+  outerCircle.style.transition = "transform 0.3s ease";
+  outerCircle.style.boxShadow = "0 0 10px rgba(92, 210, 246, 0.3)";
+  outerCircle.style.transform = "translate(-50%, -50%)";
+  document.body.appendChild(outerCircle);
+  
+  // Create the inner ball
+  const ball = document.createElement("div");
+  ball.style.width = "10px";
+  ball.style.height = "10px";
+  ball.style.backgroundColor = "#3b82f6";
+  ball.style.borderRadius = "50%";
+  ball.style.position = "fixed";
+  ball.style.pointerEvents = "none";
+  ball.style.zIndex = "9999";
+  ball.style.boxShadow = "0 0 15px rgba(59, 224, 246, 0.5)";
+  ball.style.transition = "transform 0.1s ease";
+  ball.style.transform = "translate(-50%, -50%)";
+  document.body.appendChild(ball);
+
+  // Update positions on mouse move
+  document.addEventListener("mousemove", (e) => {
+    // Update ball position
+    ball.style.left = e.clientX + "px";
+    ball.style.top = e.clientY + "px";
+
+    // Update outer circle position with a slight delay
+    outerCircle.style.left = e.clientX + "px";
+    outerCircle.style.top = e.clientY + "px";
   });
 });
   
